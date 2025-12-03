@@ -27,7 +27,7 @@ namespace Pong
 
             this.Text = "Player Score: " + playerScore + " -- Computer Score: " + computerScore;
 
-            if(ball.Top < 0 || ball.Bottom > this.ClientSize.Height)
+            if (ball.Top < 0 || ball.Bottom > this.ClientSize.Height)
             {
                 ballYspeed = -ballYspeed;
             }
@@ -39,28 +39,28 @@ namespace Pong
                 computerScore++;
             }
 
-            if(ball.Right > this.ClientSize.Width + 2)
+            if (ball.Right > this.ClientSize.Width + 2)
             {
                 ball.Left = 300;
                 ballXspeed = -ballXspeed;
                 playerScore++;
             }
 
-            if(computer.Top <= 1)
+            if (computer.Top <= 1)
             {
                 computer.Top = 0;
             }
-            else if(computer.Bottom >= this.ClientSize.Height)
+            else if (computer.Bottom >= this.ClientSize.Height)
             {
                 computer.Top = this.ClientSize.Height - computer.Height;
             }
 
-            if(ball.Top < computer.Top + (computer.Height /2) && ball.Left > 300)
+            if (ball.Top < computer.Top + (computer.Height / 2) && ball.Left > 300)
             {
                 computer.Top -= speed;
             }
 
-            if(ball.Top > computer.Top + (computer.Height /2) && ball.Left > 300)
+            if (ball.Top > computer.Top + (computer.Height / 2) && ball.Left > 300)
             {
                 computer.Top += speed;
             }
@@ -68,17 +68,17 @@ namespace Pong
 
             computerSpeedChange -= 1;
 
-            if(computerSpeedChange < 0)
+            if (computerSpeedChange < 0)
             {
                 speed = computerSpeed[rand.Next(computerSpeed.Length)];
                 computerSpeedChange = 50;
             }
 
-            if(goDown && player.Top + player.Height < this.ClientSize.Height)
+            if (goDown && player.Top + player.Height < this.ClientSize.Height)
             {
                 player.Top += playerSpeed;
             }
-            if(goUp && player.Top > 0)
+            if (goUp && player.Top > 0)
             {
                 player.Top -= playerSpeed;
             }
@@ -86,11 +86,11 @@ namespace Pong
             CheckCollision(ball, player, player.Right + 5);
             CheckCollision(ball, computer, computer.Left - 35);
 
-            if(computerScore > 5)
+            if (computerScore > 5)
             {
                 GameOver("You lose!");
             }
-            else if(playerScore > 5)
+            else if (playerScore > 5)
             {
                 GameOver("You win!");
             }
@@ -98,13 +98,28 @@ namespace Pong
 
         private void KeyIsDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Down) 
+            if (e.KeyCode == Keys.Down)
             {
-                goDown = true; 
+                goDown = true;
             }
-            if (e.KeyCode == Keys.Up) 
-            { 
+            if (e.KeyCode == Keys.Up)
+            {
                 goUp = true;
+            }
+
+
+            //pause button
+            if (e.KeyCode == Keys.P)
+            {
+                GameTimer.Stop();
+                MessageBox.Show("Game paused");
+                GameTimer.Start();
+            }
+
+            //exit button
+            if(e.KeyCode == Keys.X)
+            {
+                this.Close();
             }
         }
 
@@ -158,7 +173,7 @@ namespace Pong
             playerScore = 0;
             ballXspeed = ballYspeed = 4;
             computerSpeedChange = 50;
-            GameTimer.Start();
+            this.Close();
         }
     }
 }

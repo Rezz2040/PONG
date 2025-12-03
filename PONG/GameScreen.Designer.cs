@@ -34,6 +34,8 @@
             computer = new PictureBox();
             ball = new PictureBox();
             GameTimer = new System.Windows.Forms.Timer(components);
+            pause = new Label();
+            exit = new Label();
             ((System.ComponentModel.ISupportInitialize)player).BeginInit();
             ((System.ComponentModel.ISupportInitialize)computer).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ball).BeginInit();
@@ -75,12 +77,38 @@
             GameTimer.Interval = 20;
             GameTimer.Tick += GameTimerEvent;
             // 
+            // pause
+            // 
+            pause.AutoSize = true;
+            pause.BackColor = Color.Transparent;
+            pause.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            pause.ForeColor = Color.White;
+            pause.Location = new Point(337, 421);
+            pause.Name = "pause";
+            pause.Size = new Size(73, 20);
+            pause.TabIndex = 3;
+            pause.Text = "P - pause";
+            // 
+            // exit
+            // 
+            exit.AutoSize = true;
+            exit.BackColor = Color.Transparent;
+            exit.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            exit.ForeColor = Color.White;
+            exit.Location = new Point(416, 421);
+            exit.Name = "exit";
+            exit.Size = new Size(59, 20);
+            exit.TabIndex = 4;
+            exit.Text = "X - exit";
+            // 
             // GameScreen
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
             ClientSize = new Size(800, 450);
+            Controls.Add(exit);
+            Controls.Add(pause);
             Controls.Add(ball);
             Controls.Add(computer);
             Controls.Add(player);
@@ -93,6 +121,7 @@
             ((System.ComponentModel.ISupportInitialize)computer).EndInit();
             ((System.ComponentModel.ISupportInitialize)ball).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -101,5 +130,7 @@
         private PictureBox computer;
         private PictureBox ball;
         private System.Windows.Forms.Timer GameTimer;
+        private Label pause;
+        private Label exit;
     }
 }
