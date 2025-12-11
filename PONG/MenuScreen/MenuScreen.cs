@@ -16,16 +16,5 @@ namespace Pong
         {
             InitializeComponent();
         }
-
-        private void LoadGame(object sender, EventArgs e)
-        {
-            GameScreen gameWindow = new GameScreen();
-            gameWindow.Show();
-        }
-
-        private void ExitGame(object sender, EventArgs e)
-        {
-            this.Close();
-        }
     }
 }

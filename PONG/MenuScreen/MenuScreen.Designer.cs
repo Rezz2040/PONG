@@ -55,7 +55,7 @@
             // 
             // Exit
             // 
-            Exit.Location = new Point(191, 260);
+            Exit.Location = new Point(191, 259);
             Exit.Name = "Exit";
             Exit.Size = new Size(94, 29);
             Exit.TabIndex = 2;
@@ -67,7 +67,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ControlDarkDark;
+            BackColor = SystemColors.ActiveBorder;
             ClientSize = new Size(479, 450);
             Controls.Add(Exit);
             Controls.Add(Play);

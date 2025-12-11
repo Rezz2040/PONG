@@ -43,6 +43,7 @@
             // 
             // player
             // 
+            player.BackColor = SystemColors.ControlDarkDark;
             player.Image = (Image)resources.GetObject("player.Image");
             player.Location = new Point(12, 138);
             player.Name = "player";
@@ -105,7 +106,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ControlDarkDark;
+            BackColor = SystemColors.ActiveBorder;
             ClientSize = new Size(800, 450);
             Controls.Add(exit);
             Controls.Add(pause);
