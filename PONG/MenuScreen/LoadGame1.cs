@@ -8,9 +8,9 @@ namespace Pong
 {
     public partial class MenuScreen
     {
-        private void LoadGame(object sender, EventArgs e)
+        private void LoadGame1(object sender, EventArgs e)
         {
-            GameScreen gameWindow = new GameScreen();
+            GameScreen gameWindow = new GameScreen(false);
             gameWindow.Show();
         }
     }

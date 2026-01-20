@@ -43,7 +43,7 @@
             // 
             // player
             // 
-            player.BackColor = SystemColors.ControlDarkDark;
+            player.BackColor = Color.Cyan;
             player.Image = (Image)resources.GetObject("player.Image");
             player.Location = new Point(12, 138);
             player.Name = "player";
@@ -54,6 +54,7 @@
             // 
             // computer
             // 
+            computer.BackColor = Color.Magenta;
             computer.Image = (Image)resources.GetObject("computer.Image");
             computer.Location = new Point(758, 138);
             computer.Name = "computer";
@@ -82,11 +83,11 @@
             // 
             pause.AutoSize = true;
             pause.BackColor = Color.Transparent;
-            pause.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            pause.Font = new Font("Consolas", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
             pause.ForeColor = Color.White;
-            pause.Location = new Point(337, 421);
+            pause.Location = new Point(308, 421);
             pause.Name = "pause";
-            pause.Size = new Size(73, 20);
+            pause.Size = new Size(80, 18);
             pause.TabIndex = 3;
             pause.Text = "P - pause";
             // 
@@ -94,11 +95,11 @@
             // 
             exit.AutoSize = true;
             exit.BackColor = Color.Transparent;
-            exit.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            exit.Font = new Font("Consolas", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
             exit.ForeColor = Color.White;
             exit.Location = new Point(416, 421);
             exit.Name = "exit";
-            exit.Size = new Size(59, 20);
+            exit.Size = new Size(72, 18);
             exit.TabIndex = 4;
             exit.Text = "X - exit";
             // 
@@ -106,7 +107,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ActiveBorder;
+            BackColor = Color.FromArgb(0, 0, 22);
             ClientSize = new Size(800, 450);
             Controls.Add(exit);
             Controls.Add(pause);
@@ -115,7 +116,8 @@
             Controls.Add(player);
             DoubleBuffered = true;
             Name = "GameScreen";
-            Text = "Player: 0 -- Computer: 0";
+            Text = "`";
+            Paint += GameScreen_Paint;
             KeyDown += KeyIsDown;
             KeyUp += KeyIsUp;
             ((System.ComponentModel.ISupportInitialize)player).EndInit();
