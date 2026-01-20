@@ -34,6 +34,8 @@ namespace Pong
                 {
                     ballYspeed = y;
                 }
+
+                hitSound.Play();
             }
         }
     }

@@ -23,4 +23,36 @@
     </EmbeddedResource>
   </ItemGroup>
 
+	<ItemGroup>
+		<Compile Update="GameScreen\Collisions.cs" />
+		<Compile Update="GameScreen\GameOver.cs">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Update="GameScreen\GameTimerEvent.cs">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Update="GameScreen\Movement.cs">
+			<SubType>Code</SubType>
+		</Compile>
+		
+		<Compile Update="MenuScreen\ExitGame.cs">
+			<SubType>Code</SubType>
+		</Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="Assets\hit.wav">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="Assets\lose.wav">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="Assets\score.wav">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="Assets\win.wav">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	</ItemGroup>
+	
 </Project>

@@ -10,15 +10,26 @@ namespace Pong
     {
         private void KeyIsDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Down)
+            if (e.KeyCode == Keys.S)
             {
-                goDown = true;
+                P1GoDown = true;
             }
-            if (e.KeyCode == Keys.Up)
+            if (e.KeyCode == Keys.W)
             {
-                goUp = true;
+                P1GoUp = true;
             }
 
+            if(isPvP == true)
+            {
+                if(e.KeyCode == Keys.Down)
+                {
+                    P2GoDown = true;
+                }
+                if(e.KeyCode == Keys.Up)
+                {
+                    P2GoUp = true;
+                }
+            }
 
             //pause button
             if (e.KeyCode == Keys.P)
@@ -37,15 +48,27 @@ namespace Pong
 
         private void KeyIsUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Down)
+            if (e.KeyCode == Keys.S)
             {
-                goDown = false;
+                P1GoDown = false;
             }
-            if (e.KeyCode == Keys.Up)
+            if (e.KeyCode == Keys.W)
             {
-                goUp = false;
+                P1GoUp = false;
+            }
+
+            if(isPvP == true)
+            {
+                if(e.KeyCode == Keys.Down)
+                {
+                    P2GoDown = false;
+                }
+                if(e.KeyCode == Keys.Up)
+                {
+                    P2GoUp= false;
+                }
             }
         }
     }
-    
+
 }
